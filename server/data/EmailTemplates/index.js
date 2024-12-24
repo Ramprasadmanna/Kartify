@@ -1,0 +1,8 @@
+export { default as OtpEmail } from './Otp.mail.js'
+export { default as WelcomeEmail } from './Welcome.mail.js'
+export { default as OrderEmail } from './Order.mail.js'
+export { default as AccountDeactivateMail } from './Deactivate.mail.js'
+export { default as AccountReactivateMail } from './Reactivate.mail.js'
+export { default as AccountUpdateMail } from './AccountUpdate.mail.js'
+export { default as AccountDeleteMail } from './AccountDelete.mail.js'
+export { default as OrderDeliveredMail } from './DeliveredOrder.mail.js'
