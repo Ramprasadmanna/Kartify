@@ -25,7 +25,6 @@ const RegisterScreen = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // const [otp, setOtp] = useState('');
   const [showOtp, setShowOtp] = useState(false);
   const [isValidOtp, setisValidOtp] = useState(false);
 
@@ -80,8 +79,12 @@ const RegisterScreen = () => {
       return;
     } else {
       try {
-        const response = await register({ name, email, password }).unwrap();
-        console.log(response);
+        const response = await register({
+          name,
+          email,
+          password,
+          isValidOtp,
+        }).unwrap();
         dispatch(setCredentials({ ...response }));
         toast.success(`Registration SucessFull`);
         toast.success(`Welcome ${response.name}`);

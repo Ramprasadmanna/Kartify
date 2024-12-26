@@ -70,10 +70,10 @@ const Paginate = ({ pages, pageSize, page, path, keyword }) => {
 };
 
 Paginate.propTypes = {
-  pages: PropTypes.number.isRequired,
-  page: PropTypes.number.isRequired,
-  pageSize: PropTypes.number.isRequired,
-  path: PropTypes.string.isRequired,
+  pages: PropTypes.number,
+  page: PropTypes.number,
+  pageSize: PropTypes.number,
+  path: PropTypes.string,
   keyword: PropTypes.string,
 };
 

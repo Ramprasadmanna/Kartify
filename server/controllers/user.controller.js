@@ -88,7 +88,7 @@ const loginUser = async (req, res) => {
  * @access	public
  */
 const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, isValidOtp } = req.body;
 
   const userExists = await userModel.findOne({ email });
 
@@ -97,23 +97,30 @@ const registerUser = async (req, res) => {
     throw new Error('User Already Exists');
   }
 
-  const user = await userModel.create({ name, email, password });
-  if (user) {
-    generateToken(res, user._id);
+  if (isValidOtp) {
+    const user = await userModel.create({ name, email, password });
+    if (user) {
+      generateToken(res, user._id);
 
-    res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-    });
+      res.status(201).json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      });
 
-    mailSend('welcome', user);
+      mailSend('welcome', user);
 
+    } else {
+      res.status(400);
+      throw new Error('Invalid User Data');
+    }
   } else {
     res.status(400);
-    throw new Error('Invalid User Data');
+    throw new Error('OTP Validation Failed');
   }
+
+
 
 };
 
