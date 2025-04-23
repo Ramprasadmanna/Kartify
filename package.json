@@ -1,7 +1,7 @@
 {
-  "name": "rststore",
+  "name": "kartify",
   "version": "1.0.0",
-  "description": "Rst Store Application",
+  "description": "Kartify Ecommerce Application",
   "main": "main.js",
   "type": "module",
   "scripts": {
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "nodemon": "^3.1.4",
+    "nodemon": "^3.1.9",
     "prettier": "^3.3.3"
   }
 }

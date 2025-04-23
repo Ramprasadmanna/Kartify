@@ -11,7 +11,6 @@ import mailSend from "#utils/mailSender.js";
  * @access	private
  */
 const createOrder = async (req, res) => {
-  console.log(req.user);
 
   const {
     orderItems,

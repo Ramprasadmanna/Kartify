@@ -21,6 +21,7 @@ const UserEditScreen = () => {
   const [email, setEmail] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
 
+
   const {
     data: user,
     error,
@@ -45,7 +46,7 @@ const UserEditScreen = () => {
       await updateUser({ userId, name, email, isAdmin });
       toast.success('User updated successfully');
       refetch();
-      navigate('/admin/userlist');
+      // navigate('/admin/userlist');
     } catch (error) {
       toast.error(error?.data?.message || error?.message);
     }
@@ -97,7 +98,7 @@ const UserEditScreen = () => {
                         id='email'
                         type='email'
                         disabled
-                        className='disabled:bg-slate-100 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 disabled:cursor-not-allowed sm:text-sm sm:leading-6'
+                        className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 disabled:cursor-not-allowed disabled:bg-slate-100 sm:text-sm sm:leading-6'
                       />
                     </div>
                   </div>

@@ -93,6 +93,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
   })
 })
 
+
 export const {
   useGetOtpMutation,
   useVerifyOtpMutation,

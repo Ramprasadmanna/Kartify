@@ -2,7 +2,7 @@ import { PRODUCT_URL, UPLOAD_URL } from "../constants";
 import { apiSlice } from "./apiSlice";
 
 
-export const productApiSlice = apiSlice.injectEndpoints({
+const productApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getPublishProducts: builder.query({
       query: ({ keyword, pageSize, pageNumber }) => ({

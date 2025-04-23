@@ -1,13 +1,15 @@
 import DesktopMenu from './DesktopMenu';
 import Logo from './logo';
 import SerchBar from './SerchBar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MobileMenuIcon from './MobileMenuIcon';
 import MobileMenu from './MobileMenu';
 import MegaMenu from './MegaMenu';
 import MobileSearchBar from './MobileSearchBar';
 
 const Header = () => {
+
+
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className='fixed z-50 w-full border-b bg-white'>

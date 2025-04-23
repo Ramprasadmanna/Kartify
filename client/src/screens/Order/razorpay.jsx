@@ -34,7 +34,6 @@ const RazorPayScreen = () => {
     refetch,
   } = useGetOrderDetailsQuery(orderId);
 
-  console.log(order);
 
   // Pay Order Backend Endpoint
   const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();

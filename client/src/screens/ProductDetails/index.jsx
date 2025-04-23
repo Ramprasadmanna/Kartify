@@ -16,6 +16,8 @@ import { addToCart } from '@slices/cartSlice';
 import { toast } from 'react-toastify';
 
 const ProductDetailsScreen = () => {
+  // console.log(addToCart);
+
   const { id: productId } = useParams();
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -25,6 +27,8 @@ const ProductDetailsScreen = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  dispatch(addToCart({ name: 'shirt', price: 100 }));
 
   const {
     data: product,

@@ -13,6 +13,8 @@ import store from '../../store';
 const CartScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log(useSelector(state=>state));
+
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 

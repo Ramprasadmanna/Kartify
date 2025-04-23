@@ -17,6 +17,7 @@ const LoginScreen = () => {
   const { search } = useLocation();
   const sp = new URLSearchParams(search);
   const redirect = sp.get('redirect') || '/';
+  console.log(useLoginMutation());
 
   const [login, { isLoading }] = useLoginMutation();
   // const [login, response] = useLoginMutation();
@@ -111,7 +112,6 @@ const LoginScreen = () => {
               Click here to sign up
             </Link>
           </p>
-
         </div>
       </div>
     </>
