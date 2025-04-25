@@ -7,86 +7,81 @@ import {
   AccountUpdateMail,
   AccountDeleteMail,
   OrderDeliveredMail,
-  OtpEmail
-} from '#data/EmailTemplates/index.js'
-
+  OtpEmail,
+} from "#data/EmailTemplates/index.js";
 
 const mailSend = async (type, data) => {
-
   let options = {
-    to: '',
-    subject: '',
-    html: ''
+    to: "",
+    subject: "",
+    html: "",
   };
 
   if (type === "otp") {
     const config = OtpEmail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   if (type === "welcome") {
     const config = WelcomeEmail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   if (type === "order") {
     const config = OrderEmail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   if (type === "delivered") {
     const config = OrderDeliveredMail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   if (type === "deactivate") {
     const config = AccountDeactivateMail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   if (type === "reactivate") {
     const config = AccountReactivateMail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   if (type === "update") {
     const config = AccountUpdateMail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   if (type === "delete") {
     const config = AccountDeleteMail(data);
     options = {
-      ...config
-    }
+      ...config,
+    };
   }
 
   try {
     const id = await transporter.sendMail({
-      from: 'Kartify',
-      ...options
+      from: "Kartify",
+      ...options,
     });
-
-    console.log(id);
   } catch (err) {
-    console.log('Mail Sending Error:')
+    console.log("Mail Sending Error:");
     console.log(err);
   }
-
-}
+};
 
 export default mailSend;
